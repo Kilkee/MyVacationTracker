@@ -25,6 +25,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -111,6 +112,8 @@ public class MainActivity extends AppCompatActivity {
                 emp.put(Constants.KEY_STARTDATE, startDateEditText.getText().toString());
                 emp.put(Constants.KEY_ENDDATE, endDateEditText.getText().toString());
                 emp.put(Constants.KEY_REASON, reasonEditText.getText().toString());
+
+                // emp.put(Constants.KEY_CREATED, new Date());  // Timestamp for when a vacation was created
                 FirebaseFirestore.getInstance().collection(Constants.COLLECTION_PATH).add(emp);
                     }
                 });
